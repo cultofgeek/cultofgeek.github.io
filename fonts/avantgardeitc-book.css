@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'AvantGardeITCBook';
+    src: url('avantgardeitc-book.eot');
+    src: url('avantgardeitc-book.eot') format('embedded-opentype'),
+         url('avantgardeitc-book.woff') format('woff'),
+         url('avantgardeitc-book.ttf') format('truetype'),
+         url('avantgardeitc-book.svg#AvantGardeITCBook') format('svg');
+}

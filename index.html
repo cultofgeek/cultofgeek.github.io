@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Won J. You: creative direction, design, development</title>
+		<meta name="keywords" content="seventy-seven, won you, web design, flash design, web development, creative direction, motion graphics, computer science, visual experiments, workspace" />
+		<meta name="description" content="Won J. You is a Chicago-based interactive designer, who specializes in creative direction and UI/UX." />
+
+        <meta name="viewport" content="width=device-width">
+		<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/cover/normalize.min.css">
+        <link rel="stylesheet" href="css/cover/main.css">
+
+        <script src="js/vendor/package.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>		
+		window.paceOptions = {
+		  ghostTime: 700
+		}	
+		</script>
+		<script src="js/vendor/pace.min.js"></script>
+		
+		<script type="text/javascript">
+			var count = 0;
+			var timer = setInterval(tick, 40);
+			var isReady = false;
+			
+			var ones = [ "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" ];
+			var teens = [ "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" ];
+			var tens = [ "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" ];
+
+			//Only converts up to 99
+			function makeFriendly(n, leftDigits){
+
+				leftDigits = String(leftDigits);
+				if (n == 0)
+				{
+					return leftDigits;
+				}
+				var friendlyInt = leftDigits;
+
+				if (friendlyInt.length > 0)
+				{
+					friendlyInt += "-";
+				}
+
+				if (n < 10){
+					friendlyInt += ones[n];
+				}
+				else if (n < 20){
+					friendlyInt += teens[n - 10];
+				}
+				else{
+					var index = Math.floor(n / 10 - 2);
+					var tendigit = tens[index];
+
+					friendlyInt += makeFriendly(n % 10, String(tendigit));
+				}
+
+				return friendlyInt;
+			}
+
+			function convertToStr(n){
+				if (n == 0){
+					return "zero";
+				}
+				
+				return makeFriendly(n, "");
+			}
+			
+			function tick(e){
+				var limit = 77;
+				var message;
+				
+				var percent = $(".pace-progress").width() / window.innerWidth;
+				var paceWidth = percent * limit;
+
+				
+				if (count < limit){
+
+					if (count < paceWidth){
+						count++;
+					}
+					
+					var goalWidth = count/limit * 100;
+					$(".bar-progress").css({"width":goalWidth+"%"});
+				}
+				else{
+					clearInterval(timer);
+					isReady = true;
+				}
+				
+
+				message = convertToStr(count);
+				$("#hello").html(message);
+			}
+			
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-300890-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+		<!--
+		Created by
+		____    __    ____  ______   .__   __.           __         ____    ____  ______    __    __  
+		\   \  /  \  /   / /  __  \  |  \ |  |          |  |        \   \  /   / /  __  \  |  |  |  | 
+		 \   \/    \/   / |  |  |  | |   \|  |          |  |         \   \/   / |  |  |  | |  |  |  | 
+		  \            /  |  |  |  | |  . `  |    .--.  |  |          \_    _/  |  |  |  | |  |  |  | 
+		   \    /\    /   |  `--'  | |  |\   |    |  `--'  |  __        |  |    |  `--'  | |  `--'  | 
+			\__/  \__/     \______/  |__| \__|     \______/  (__)       |__|     \______/   \______/
+		-->
+		<div class="bar-progress"></div>
+		<div id="hello"></div>
+		<div id="video-container">
+			<iframe id="vimeoplayer" src="http://player.vimeo.com/video/69731344?api=1&player_id=vimeoplayer" width="100%" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>	
+	   <div class="page-overlay"></div>
+		<div class="main-container">
+			<div class="header-container">
+				<header>
+					<div class="headline">
+						<h1></h1>
+					</div>
+					<div class="headname">
+						<div class="title">
+							WON J. YOU<span class="position">CREATIVE DIRECTOR</span>
+						</div>	
+					</div>
+				</header>
+			</div>
+			<div id="enter" class="btn">
+				<span><div class="viewlink"><a href="/portfolio">View Portfolio</a></div></span>
+			</div>
+        </div> <!-- #main-container -->
+
+        <div class="footer-container">
+            <footer>
+                <div class="reel">
+					<span class="playicon"><img src="img/playicon.png"></span>
+                        <div class="overlay"></div>
+				</div>
+				<div class="intro">
+					<article class="bio">
+						<h2>INTRO</h2>
+						<p>I am a natural-born creative geek, design and information junkie, and avid film lover. I have spent over 12 years designing and creating immersive digital experiences, overseeing everything from concept to design to execution. My work is defined by my passion for building great products.</p>
+					</article>	
+				</div>
+            </footer>
+        </div>
+        <script src="js/vendor/froogaloop2.min.js"></script>
+		<script src="js/jquery.typer.js"></script>
+        <script src="js/main.min.js"></script>
+
+    </body>
+</html>
